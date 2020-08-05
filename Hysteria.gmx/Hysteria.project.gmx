@@ -8,6 +8,13 @@
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\FlagInit.gml</script>
+    <script>scripts\AddFlag.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\oGame</object>
+  </objects>
   <help>
     <rtf>help.rtf</rtf>
   </help>
