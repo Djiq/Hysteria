@@ -9,11 +9,19 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\FlagInit.gml</script>
-    <script>scripts\AddFlag.gml</script>
+    <scripts name="FlagScripts">
+      <script>scripts\FlagInit.gml</script>
+      <script>scripts\AddFlag.gml</script>
+      <script>scripts\ChangeFlag.gml</script>
+      <script>scripts\GetFlag.gml</script>
+    </scripts>
+    <script>scripts\bhv_movement.gml</script>
+    <script>scripts\bhv_controls.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oGame</object>
+    <object>objects\oAtom</object>
+    <object>objects\oCollide</object>
   </objects>
   <help>
     <rtf>help.rtf</rtf>
