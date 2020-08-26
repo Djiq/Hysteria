@@ -28,6 +28,7 @@
             <string>event_inherited()
 collideable = true
 RegisterSignal(id,SIG_INTERACT,bhv_shout)
+UnregisterScript(id,SIG_INTERACT,bhv_shout)
 </string>
           </argument>
         </arguments>

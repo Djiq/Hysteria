@@ -15,6 +15,9 @@
     <scripts name="Signals">
       <script>scripts\RegisterSignal.gml</script>
       <script>scripts\SendSignal.gml</script>
+      <script>scripts\UnregisterScript.gml</script>
+      <script>scripts\UnregisterSignalScripts.gml</script>
+      <script>scripts\UnregisterAllSignals.gml</script>
     </scripts>
     <scripts name="FlagScripts">
       <script>scripts\FlagInit.gml</script>
