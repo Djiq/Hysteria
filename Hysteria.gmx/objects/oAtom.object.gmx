@@ -28,6 +28,8 @@
             <string>FlagInit(id)
 
 collideable = false
+
+behaviour[0] = false
 </string>
           </argument>
         </arguments>
