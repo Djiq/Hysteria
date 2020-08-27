@@ -51,7 +51,7 @@ movespeed = 2
             <kind>1</kind>
             <string>bhv_controls()
 bhv_movement()
-
+bhv_camera_follow()
 </string>
           </argument>
         </arguments>

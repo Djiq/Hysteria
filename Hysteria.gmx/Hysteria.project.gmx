@@ -12,7 +12,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Signals">
+    <scripts name="SignalsControl">
       <script>scripts\RegisterSignal.gml</script>
       <script>scripts\SendSignal.gml</script>
       <script>scripts\UnregisterScript.gml</script>
@@ -30,6 +30,18 @@
       <script>scripts\bhv_controls.gml</script>
       <script>scripts\bhv_movement.gml</script>
       <script>scripts\bhv_interact_ray.gml</script>
+      <script>scripts\bhv_open_bigbox.gml</script>
+      <script>scripts\bhv_camera_follow.gml</script>
+    </scripts>
+    <scripts name="UI">
+      <scripts name="UIcontrol">
+        <script>scripts\UIcontrol.gml</script>
+        <script>scripts\UIopen.gml</script>
+        <script>scripts\UIclose.gml</script>
+      </scripts>
+      <scripts name="BaseUI">
+        <script>scripts\UIBaseBox.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -38,7 +50,7 @@
     <object>objects\oCollide</object>
     <object>objects\oPlayer</object>
     <object>objects\oWall</object>
-    <object>objects\UImanager</object>
+    <object>objects\_UImanager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

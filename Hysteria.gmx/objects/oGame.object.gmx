@@ -28,7 +28,6 @@
             <string>global.flags = ds_map_create()
 FlagInit("global_flag")
 global.registered_signals = ds_map_create()
-instance_create(x,y,UImanager)
 </string>
           </argument>
         </arguments>
