@@ -26,12 +26,18 @@
       <script>scripts\GetFlag.gml</script>
     </scripts>
     <scripts name="behaviour">
-      <script>scripts\bhv_shout.gml</script>
-      <script>scripts\bhv_controls.gml</script>
-      <script>scripts\bhv_movement.gml</script>
-      <script>scripts\bhv_interact_ray.gml</script>
-      <script>scripts\bhv_open_bigbox.gml</script>
-      <script>scripts\bhv_camera_follow.gml</script>
+      <scripts name="player">
+        <script>scripts\bhv_controls.gml</script>
+        <script>scripts\bhv_movement.gml</script>
+        <script>scripts\bhv_camera_follow.gml</script>
+        <script>scripts\bhv_interact_ray.gml</script>
+      </scripts>
+      <scripts name="UI">
+        <script>scripts\bhv_open_bigbox.gml</script>
+      </scripts>
+      <scripts name="debug">
+        <script>scripts\bhv_shout.gml</script>
+      </scripts>
     </scripts>
     <scripts name="UI">
       <scripts name="UIcontrol">
@@ -45,12 +51,14 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\oGame</object>
-    <object>objects\oAtom</object>
-    <object>objects\oCollide</object>
     <object>objects\oPlayer</object>
     <object>objects\oWall</object>
-    <object>objects\_UImanager</object>
+    <objects name="BaseObjects">
+      <object>objects\oGame</object>
+      <object>objects\oAtom</object>
+      <object>objects\oCollide</object>
+      <object>objects\_UImanager</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
