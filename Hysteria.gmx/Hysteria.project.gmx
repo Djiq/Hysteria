@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sWall</sprite>
+    <sprite>sprites\sGun</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -32,9 +33,6 @@
         <script>scripts\bhv_camera_follow.gml</script>
         <script>scripts\bhv_interact_ray.gml</script>
       </scripts>
-      <scripts name="UI">
-        <script>scripts\bhv_open_bigbox.gml</script>
-      </scripts>
       <scripts name="debug">
         <script>scripts\bhv_shout.gml</script>
       </scripts>
@@ -46,19 +44,23 @@
         <script>scripts\UIclose.gml</script>
       </scripts>
       <scripts name="BaseUI">
-        <script>scripts\UIBaseBox.gml</script>
+        <scripts name="UI">
+          <script>scripts\UIHealthbar.gml</script>
+        </scripts>
+        <scripts name="Components">
+          <script>scripts\UIFancyBox.gml</script>
+        </scripts>
       </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\oPlayer</object>
-    <object>objects\oWall</object>
     <objects name="BaseObjects">
       <object>objects\oGame</object>
       <object>objects\oAtom</object>
       <object>objects\oCollide</object>
-      <object>objects\_UImanager</object>
     </objects>
+    <object>objects\oPlayer</object>
+    <object>objects\oWall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited()
 collideable = true
-RegisterSignal(id,SIG_INTERACT,bhv_open_bigbox)
+
 </string>
           </argument>
         </arguments>

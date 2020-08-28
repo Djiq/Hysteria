@@ -6,7 +6,8 @@ for(var i = 0; i < ds_list_size(global.UImanager.OpenUIlist);i++){
     var ui = map[? "ui"]
     var xpos = map[? "xpos"]
     var ypos = map[? "ypos"]
-    script_execute(ui,xpos,ypos)
+    var args = map[? "args"]
+    script_execute(ui,xpos,ypos,args)
 }
 
 
