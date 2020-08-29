@@ -30,6 +30,41 @@ FlagInit("global_flag")
 global.registered_signals = ds_map_create()
 OpenUIlist = ds_list_create()
 global.UImanager = id
+global.Items = array_create(1)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ItemDefines
+
+//Guns
+
+//AKM
+var map = ds_map_create();
+map[? "Sprite"] = sAKM;
+var list = ds_list_create();
+var signal_1 = ds_map_create();
+signal_1[? SIG_STEP_ON] = bhv_shout
+ds_list_add(list,signal_1)
+map[? "Signals"] = list
+RegisterItem(map)
+
 </string>
           </argument>
         </arguments>

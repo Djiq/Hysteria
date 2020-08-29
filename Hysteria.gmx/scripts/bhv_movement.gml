@@ -3,26 +3,36 @@ hsp = horizontal * movespeed
 vsp = vertical * movespeed
 
 var hatom = instance_place(x+hsp, y, oAtom);
-if (instance_exists(hatom) && hatom.collideable)
+if (instance_exists(hatom))
 {
-    while(!place_meeting(x+sign(hsp),y,oAtom))
-    {
-        x += sign(hsp);
+    if(hatom.collideable){
+        while(!place_meeting(x+sign(hsp),y,oAtom))
+        {
+            x += sign(hsp);
+        }
+        SendSignal(hatom,SIG_COLLISION,id)
+        hsp = 0;
+    }else{
+        SendSignal(hatom,SIG_STEP_ON,id)
     }
-    SendSignal(hatom,SIG_COLLISION,id)
-    hsp = 0;
 }
 x += hsp;
 
 var vatom = instance_place(x, y+vsp, oAtom);
-if (instance_exists(vatom) && vatom.collideable)
+if (instance_exists(vatom))
 {
-    while(!place_meeting(x,y+sign(vsp),oAtom))
-    {
-        y += sign(vsp);
+    if(vatom.collideable){
+        while(!place_meeting(x,y+sign(vsp),oAtom))
+        {
+            y += sign(vsp);
+        }
+        SendSignal(vatom,SIG_COLLISION,id)
+        vsp = 0;
+    }else{
+        if(!SendSignal(vatom,SIG_STEP_ON,id)){
+            show_debug_message("Stepon failed")
+        }
     }
-    SendSignal(vatom,"SSCollision",id)
-    vsp = 0;
 }
 y += vsp;
 

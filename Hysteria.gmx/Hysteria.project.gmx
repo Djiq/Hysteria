@@ -9,6 +9,10 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sGun</sprite>
+    <sprites name="guns">
+      <sprite>sprites\sAKM</sprite>
+    </sprites>
+    <sprite>sprites\sMask</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -35,6 +39,7 @@
       </scripts>
       <scripts name="debug">
         <script>scripts\bhv_shout.gml</script>
+        <script>scripts\bhv_spawn_akm.gml</script>
       </scripts>
     </scripts>
     <scripts name="UI">
@@ -52,12 +57,19 @@
         </scripts>
       </scripts>
     </scripts>
+    <scripts name="Items">
+      <script>scripts\ApplyItemProperties.gml</script>
+      <script>scripts\DropItem.gml</script>
+      <script>scripts\CreateItem.gml</script>
+      <script>scripts\RegisterItem.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="BaseObjects">
       <object>objects\oGame</object>
       <object>objects\oAtom</object>
       <object>objects\oCollide</object>
+      <object>objects\oItem</object>
     </objects>
     <object>objects\oPlayer</object>
     <object>objects\oWall</object>
