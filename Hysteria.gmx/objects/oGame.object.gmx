@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.flags = ds_map_create()
+            <string>global.moves = ds_map_create()
+global.flags = ds_map_create()
 FlagInit("global_flag")
 global.registered_signals = ds_map_create()
 OpenUIlist = ds_list_create()
@@ -52,17 +53,56 @@ global.Items = array_create(1)
           <argument>
             <kind>1</kind>
             <string>///ItemDefines
+randomize()
+
+///Ammo
+var map = ds_map_create();
+var list = ds_list_create();
+declareSignal(list,SIG_STEP_ON,bhv_stack_try_adding_to_inventory)
+map[? "Signals"] = list
+map[? "Sprite"] = sAmmo;
+map[? "MaxStack"] = 120
+map[? "CurrentStack"] = 120;
+map[? "DisplayVar" ] = "CurrentStack"
+RegisterItem(map)
 
 //Guns
 
-//AKM
+// --AKM--
 var map = ds_map_create();
-map[? "Sprite"] = sAKM;
+
+//signals
 var list = ds_list_create();
-var signal_1 = ds_map_create();
-signal_1[? SIG_STEP_ON] = bhv_shout
-ds_list_add(list,signal_1)
+
+declareSignal(list,SIG_STEP_ON,bhv_try_adding_to_inventory)
+declareSignal(list,SIG_PLAYER_LEFT_CLICK,bhv_shoot)
+declareSignal(list,SIG_PLAYER_TICK,bhv_gun_cooldown)
+declareSignal(list,SIG_PLAYER_RELOAD,bhv_reload)
+
+map[? "MaxBullets"] = 30
+map[? "CurrentBullets"] = 0
+map[? "DisplayVar" ] = "CurrentBullets"
 map[? "Signals"] = list
+map[? "Damage"] = 5
+map[? "Spread"] = 5
+map[? "Speed"] = 8
+map[? "MaxCooldown"] = 5
+map[? "CurrentCooldown"] = 5
+map[? "Sprite"] = sAKM;
+map[? "BulletSprite"] = sBullet;
+map[? "ReloadTime"] = 60
+
+RegisterItem(map)
+///C4
+
+var map = ds_map_create();
+var list = ds_list_create();
+
+declareSignal(list,SIG_STEP_ON,bhv_try_adding_to_inventory)
+
+map[? "Signals"] = list;
+map[? "Sprite"] = sC4;
+
 RegisterItem(map)
 
 </string>

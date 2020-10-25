@@ -13,6 +13,9 @@
       <sprite>sprites\sAKM</sprite>
     </sprites>
     <sprite>sprites\sMask</sprite>
+    <sprite>sprites\sBullet</sprite>
+    <sprite>sprites\sAmmo</sprite>
+    <sprite>sprites\sC4</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -32,6 +35,14 @@
     </scripts>
     <scripts name="behaviour">
       <scripts name="player">
+        <scripts name="inventory">
+          <script>scripts\bhv_try_adding_to_inventory.gml</script>
+          <script>scripts\bhv_stack_try_adding_to_inventory.gml</script>
+        </scripts>
+        <script>scripts\bhv_player_signal_sender.gml</script>
+        <script>scripts\bhv_drop.gml</script>
+        <script>scripts\bhv_unregister_item_signals.gml</script>
+        <script>scripts\bhv_inv_controls.gml</script>
         <script>scripts\bhv_controls.gml</script>
         <script>scripts\bhv_movement.gml</script>
         <script>scripts\bhv_camera_follow.gml</script>
@@ -40,6 +51,16 @@
       <scripts name="debug">
         <script>scripts\bhv_shout.gml</script>
         <script>scripts\bhv_spawn_akm.gml</script>
+        <script>scripts\bhv_collision.gml</script>
+        <script>scripts\bhv_delete.gml</script>
+        <script>scripts\bhv_bounce_horizontal.gml</script>
+        <script>scripts\bhv_bounce_vertical.gml</script>
+      </scripts>
+      <scripts name="item">
+        <script>scripts\bhv_gun_cooldown.gml</script>
+        <script>scripts\bhv_shoot.gml</script>
+        <script>scripts\bhv_reload_finish.gml</script>
+        <script>scripts\bhv_reload.gml</script>
       </scripts>
     </scripts>
     <scripts name="UI">
@@ -47,21 +68,32 @@
         <script>scripts\UIcontrol.gml</script>
         <script>scripts\UIopen.gml</script>
         <script>scripts\UIclose.gml</script>
+        <script>scripts\UIUpdateArg.gml</script>
       </scripts>
       <scripts name="BaseUI">
         <scripts name="UI">
           <script>scripts\UIHealthbar.gml</script>
+          <script>scripts\UIprogress.gml</script>
+          <script>scripts\UIquickbar.gml</script>
         </scripts>
         <scripts name="Components">
           <script>scripts\UIFancyBox.gml</script>
         </scripts>
       </scripts>
     </scripts>
-    <scripts name="Items">
+    <scripts name="items">
       <script>scripts\ApplyItemProperties.gml</script>
       <script>scripts\DropItem.gml</script>
       <script>scripts\CreateItem.gml</script>
       <script>scripts\RegisterItem.gml</script>
+      <script>scripts\InitItem.gml</script>
+    </scripts>
+    <scripts name="helpers">
+      <script>scripts\declareSignal.gml</script>
+      <script>scripts\apply_inv_signals.gml</script>
+      <script>scripts\useStack.gml</script>
+      <script>scripts\do_progress.gml</script>
+      <script>scripts\get_selected_input.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -70,6 +102,7 @@
       <object>objects\oAtom</object>
       <object>objects\oCollide</object>
       <object>objects\oItem</object>
+      <object>objects\oProjectile</object>
     </objects>
     <object>objects\oPlayer</object>
     <object>objects\oWall</object>

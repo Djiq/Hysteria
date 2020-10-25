@@ -1,0 +1,9 @@
+if(right_click){
+    SendSignal(global.Player,SIG_PLAYER_RIGHT_CLICK)
+}
+if(left_click){
+    SendSignal(global.Player,SIG_PLAYER_LEFT_CLICK)
+}
+if(reload){
+    SendSignal(global.Player,SIG_PLAYER_RELOAD)
+}

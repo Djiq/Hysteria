@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>global.Player = id
 event_inherited()
-movespeed = 2
+movespeed = 3
 
 maxhp = 100
 hp = 100
@@ -35,7 +35,22 @@ var uiargs = ARGS_DEFAULT;
 uiargs[0] = hp;
 uiargs[1] = maxhp;
 healthbar_ui = UIopen(UIHealthbar,32,32,uiargs)
-Inventory = ds_list_create()
+selected_inventory_slot = 1
+max_inv_space = 10;
+Inventory = array_create(max_inv_space);
+
+uiargs = ARGS_DEFAULT;
+uiargs[1] = Inventory;
+uiargs[0] = selected_inventory_slot;
+inventory_ui = UIopen(UIquickbar,352,32,uiargs);
+
+allowed_signal_list = ds_list_create();
+allowed_signal_list[| 1] = SIG_PLAYER_RIGHT_CLICK;
+allowed_signal_list[| 2] = SIG_PLAYER_LEFT_CLICK;
+allowed_signal_list[| 3] = SIG_PLAYER_TICK 
+allowed_signal_list[| 4] = SIG_PLAYER_RELOAD
+
+RegisterSignal(id,SIG_INVENTORY_ADDED_ITEM,apply_inv_signals)
 </string>
           </argument>
         </arguments>
@@ -62,6 +77,10 @@ Inventory = ds_list_create()
 bhv_controls()
 bhv_movement()
 bhv_camera_follow()
+bhv_inv_controls()
+bhv_player_signal_sender()
+bhv_drop()
+SendSignal(id,SIG_PLAYER_TICK)
 </string>
           </argument>
         </arguments>
@@ -83,10 +102,36 @@ bhv_camera_follow()
           <argument>
             <kind>1</kind>
             <string>///Class code
-var uiargs = healthbar_ui[? "args"];
-uiargs[0] = hp;
-uiargs[1] = maxhp;
+
+UIUpdateArg(healthbar_ui,0,hp)
+UIUpdateArg(healthbar_ui,1,maxhp)
+
+UIUpdateArg(inventory_ui,0,selected_inventory_slot)
+UIUpdateArg(inventory_ui,1,Inventory)
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

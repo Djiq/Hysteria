@@ -678,7 +678,16 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="4">
+    <constants number="13">
+      <constant name="SIG_INVENTORY_ADDED_ITEM">"inventory_added_item"</constant>
+      <constant name="SIG_PLAYER_RELOAD">"reload"</constant>
+      <constant name="UI_CLOSE">"ui_close"</constant>
+      <constant name="SIG_COLLIDED_VERTICAL">"collided_vertical"</constant>
+      <constant name="SIG_COLLIDED_HORIZONTAL">"collided_horizontal"</constant>
+      <constant name="SIG_PLAYER_RIGHT_CLICK">"player_right_click"</constant>
+      <constant name="SIG_PLAYER_TICK">"player_tick"</constant>
+      <constant name="SIG_PLAYER_LEFT_CLICK">"player_left_click"</constant>
+      <constant name="SIG_COLLIDED">"collided"</constant>
       <constant name="SIG_COLLISION">"collision"</constant>
       <constant name="SIG_STEP_ON">"stepon"</constant>
       <constant name="SIG_INTERACT">"interact"</constant>

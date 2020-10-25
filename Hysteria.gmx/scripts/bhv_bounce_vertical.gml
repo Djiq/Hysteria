@@ -1,0 +1,2 @@
+vsp = -vsp
+return true

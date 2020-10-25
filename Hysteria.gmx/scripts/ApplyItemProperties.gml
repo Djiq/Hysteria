@@ -1,6 +1,6 @@
 ///ApplyItemProperties(ID,properties)
-var properties = argument1
 var _id = argument0
+var properties = argument1
 if(ds_map_find_value(properties, "Signals")){
     var list = properties[? "Signals"]
     for(var i = 0; i < ds_list_size(list);i++){

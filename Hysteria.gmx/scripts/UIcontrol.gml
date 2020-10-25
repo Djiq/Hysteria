@@ -7,7 +7,10 @@ for(var i = 0; i < ds_list_size(global.UImanager.OpenUIlist);i++){
     var xpos = map[? "xpos"]
     var ypos = map[? "ypos"]
     var args = map[? "args"]
-    script_execute(ui,xpos,ypos,args)
+    var return_val = script_execute(ui,xpos,ypos,args)
+    if(return_val == UI_CLOSE){
+        UIclose(i)
+    }
 }
 
 

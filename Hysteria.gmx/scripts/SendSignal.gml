@@ -15,15 +15,21 @@ if(!ds_map_find_value(map, argument[1])){
 
 var list = map[? argument[1]]
 
+
+
 var args = array_create(argument_count-2)
 
 for(var i = 0; i < argument_count-2;i++){
     args[i] = argument[i+2]
 }
-
+var return_value = false
 for(var i = 0; i < ds_list_size(list);i++){
     with(argument[0]){
-        script_execute(list[| i],args)
+       return_value = script_execute(list[| i],args)
+    }
+    //a clunky check to see if the script deleted the object, in that case just exit the send signal.
+    if(!ds_exists(list,ds_type_list)){
+        return false
     }
 }
-return true
+return return_value
